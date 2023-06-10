@@ -1,0 +1,603 @@
+/* Estilos de la Barra de navegacion */
+.navbar {
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-collapse {
+    align-items: center;
+    justify-content: end;
+}
+
+.navbar-nav {
+    margin-right: 20px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #43078F;
+}
+
+.navbar-nav .nav-item {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.btn-login-view {
+    background-color: white;
+    border: 1px solid #b92b27;
+    opacity: 0.6;
+}
+
+.btn-login-view:hover {
+    background-color: #231773;
+    color: white;
+}
+
+.btn-login-view:focus {
+    background-color: white;
+}
+
+/* Estilos del Titulo - escudo de la pagina de inicio*/
+.titulo-escudo {
+    background-image: url(../img/foto-escuela11.jpg);
+}
+
+.titulo-escudo .titulo {
+    margin-top: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #231773;
+}
+
+.titulo-escudo .escudo-titulo {
+    width: 400px;
+    height: 400px;
+    margin: 60px 0;
+    opacity: 0.6;
+}
+
+/* Estilos de las Noticias de la pagina de inicio */
+.noticias {
+    background-color: white;
+    padding: 30px;
+}
+
+.noticias .noticias-titulo {
+    color: #231773;
+    margin: 30px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.noticias .card {
+    border: 1px solid #868CB3;
+    box-shadow: 4px 4px 4px 4px #DADFFF;
+}
+
+.card-body span {
+    font-weight: bold;
+}
+
+.card-body .descripcion {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 10px 0 20px 10px;
+}
+
+.btn-leer-mas {
+    background-color: #b92b27;
+    color: white;
+    border: #b92b27;
+}
+
+.btn-leer-mas:hover {
+    background-color: #231773;
+    color: white;
+}
+
+/* Estilos de la seccion Sobre nosotros de la pagina de inicio*/
+.sobre-nosotros {
+    background-image: url(../img/image2.jpg);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulos-sobre-nosotros {
+    color: black;
+    margin: 30px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.accordion {
+    max-width: 50%;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.titulo-header-acordion {
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.accordion .accordion-item .titulo-item {
+    font-weight: bold;
+    color: white;
+    background-color: #CCEEFF;
+}
+
+.accordion-body p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+/* Estilos de la seccion de Servicios de la pagina de inicio */
+.servicios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 50px 0;
+}
+
+.titulo-servicios {
+    color: #43078F;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 30px 0 70px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.items-servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.items-servicios .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicio-titulo {
+    color: #b92b27;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+}
+
+.servicio-info {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.img-cont-serv {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicio-img {
+    border-radius: 50%;
+    height: 70%;
+    border: 2px solid #b92b27;
+}
+
+/* Estilos del Footer */
+footer {
+    min-height: 200px;
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.footer-logo {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+.footer-texto {
+    font-size: 1.2rem;
+    padding: 20px;
+    margin-bottom: 30px;
+    color: white;
+    font-weight: bold;
+    margin-right: 200px;
+}
+
+.iconos-redes-sociales a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales i {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover {
+    background-color: white;
+    border: 2px solid rgb(13, 110, 253);
+}
+
+.iconos-redes-sociales a:hover i {
+    color: black;
+}
+
+/* Estilos de la pagina de Login */
+.main-login {
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.container-login {
+    opacity: 1;
+}
+
+.titulo-login {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #231773;
+}
+
+.main-login .contenido-escudo .logo-sfc {
+    width: 50%;
+    height: 50%;
+    margin-left: 30px;
+}
+
+.boton-login {
+    background-color: #231773;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.boton-login:hover {
+    background-color: #D92534;
+}
+
+
+/* Estilos de la pagina de Home */
+/* Estilos de la barra de navegacion de la pagina de home */
+.drop-titulo {
+    color: white;
+}
+
+.personas {
+    margin-right: 50px;
+}
+
+.personas ul {
+    list-style: none;
+}
+
+.personas ul li a {
+    text-decoration: none;
+    color: #b92b27;
+}
+
+.personas ul li a:hover {
+    color: #231773;
+}
+
+.instalaciones {
+    margin-right: 50px;
+}
+
+.instalaciones ul {
+    list-style: none;
+}
+
+.instalaciones ul li a {
+    text-decoration: none;
+    color: #b92b27;
+}
+
+.instalaciones ul li a:hover {
+    color: #231773;
+}
+
+.consultas ul {
+    list-style: none;
+}
+
+.btn-logout-home {
+    background-color: white;
+    border: 1px solid white;
+    opacity: 0.7;
+    color: #231773;
+    font-weight: bold;
+    display: flex;
+}
+
+.btn-logout-home:hover {
+    background-color: #231773;
+    color: white;
+}
+
+.btn-logout-home:focus {
+    background-color: white;
+}
+
+.content-icon-button-home {
+    margin-right: 10px;
+}
+
+/* Pop up */
+.overlay {
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.overlay.active {
+    visibility: visible;
+}
+
+.pop-up {
+    background: #f8f8f8;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    text-align: center;
+    width: 600px;
+
+    transition: .3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+}
+
+.pop-up .btn-cerrar-popup {
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: #b92b27;
+    transition: .3s ease all;
+}
+
+.pop-up .btn-cerrar-popup:hover {
+    color: #231773;
+}
+
+.pop-up h3 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+
+.pop-up .contenedor-buttons {
+    margin: 10px 0 0;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up .contenedor-buttons .btn-logout-confirm {
+    width: 70px;
+    height: 40px;
+    color: white;
+    background-color: #b92b27;
+    border: solid 1px #b92b27;
+    margin: 0 20px 0 10px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.pop-up .contenedor-buttons .btn-logout-confirm:hover {
+    background-color: #231773;
+    border: solid 1px #231773;
+}
+
+.pop-up .btn-si {
+    opacity: 0;
+}
+
+.pop-up .btn-no {
+    opacity: 0;
+}
+
+/* Animaciones */
+.pop-up.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pop-up.active h3 {
+    animation: entradaTitulo .8s ease .3s forwards;
+}
+
+.pop-up.active .btn-si {
+    animation: entradaSi .8s ease .6s forwards;
+}
+
+.pop-up.active .btn-no {
+    animation: entradaNo .8s ease .6s forwards;
+}
+
+@keyframes entradaTitulo {
+    from {
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes entradaSi {
+    from {
+        transform: translateX(-25);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes entradaNo {
+    from {
+        transform: translateX(-25);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Estilos de la Bienvenida de la pagina de home */
+.bienvenida-home {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 20px 0 0;
+    padding: 10px;
+}
+
+.bienvenida-home .titulo-bienvenida {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #231773;
+}
+
+
+
+/* Estilos del Carrusel de la pagina de Home */
+.eventos-home {
+    padding: 40px 40px 80px 40px;
+    display: flex;
+}
+
+.img-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-avatar .muñeco-avatar {
+    width: 420px;
+    height: 250px;
+}
+
+.eventos-home .seccion-titulo {
+    color: #231773;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.eventos-home .carousel {
+    margin-left: 20px;
+    max-width: 96%;
+    height: 500px;
+}
+
+.carousel-item {
+    height: 500px;
+}
+
+.carousel-item .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.evento-imagen {
+    height: 100%;
+    width: 100%;
+}
+
+/* Footer Home */
+.footer-home {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-home .footer-texto {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+/* Estilos de la Lista de la pagina de alumno */
+.list-student {
+    min-height: 78vh;
+}
+
+/* Estilos de la Lista de la pagina de acudiente */
+.list-acudiente {
+    min-height: 78vh;
+}
+
+/* Estilos de la Lista de la pagina de categorias */
+.list-categories {
+    min-height: 78vh;
+}
+
+/* Estilos de la Lista de la pagina de empleados */
+.list-employees {
+    min-height: 78vh;
+}

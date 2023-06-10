@@ -1,0 +1,267 @@
+main {
+  margin-left: 350px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formCategories{
+  margin: 50px 0 0;
+  background-color: #eee;
+  border-top: solid 2px #FA7386;
+  border-left: solid 2px #FA7386;
+  border-bottom: solid 2px #8887FA;
+  border-right: solid 2px #8887FA;
+  padding: 10px 25px;
+  width: 80%;
+  box-shadow: 1px 4px 4px rgb(0,0,0,0.4);
+  border-radius: 7px;
+}
+
+.contentTitleformCategories {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.titleformCategories {
+  color: #380191;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 40px;
+}
+
+.formGroupCategories{
+  display: inline-block;
+  margin: 10px 10px 30px 100px
+}
+
+.formLabelCategories{
+  margin-right: 15px;
+}
+
+label {
+  margin-right: 15px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.formInputCategories{
+  outline: none;
+  padding: 5px;
+  border: solid 1px #b1b3b5;
+  border-radius: 7px;
+  width: 250px;
+  height: 35px;
+}
+
+.buttonSearchCategories{
+  background: #F5403D;
+  color: white;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  border: 2px solid rgb(223, 221, 221);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.buttonSearchCategories:hover{
+  background-color: #380191;
+}
+
+.contentTableCategories {
+  margin: 30px 0;
+  border: solid 2px #FA7386;
+}
+
+.tableCategories {
+  width: 100%;
+  
+}
+
+.tableCategories {
+  color: #000;
+  font-size: 14px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #d7d7d7;
+  border-bottom: solid 1px #8887FA;
+}
+
+th {
+  padding: 20px 15px;
+  font-weight: 700;
+  border-left: solid 1px #8887FA;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 15px;
+  border-left: solid 1px #8887FA;
+  border-bottom: solid 1px #8887FA;
+}
+
+.optionsCategories {
+  display: flex;
+  justify-content: right;
+}
+
+.contentOptionsCategories {
+  display: inline;
+  justify-content: right;
+  height: 70%;
+}
+
+.categoriesEdit {
+  width: 15%;
+  height: 15%;
+  margin-left: 70px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.categoriesDelete {
+  width: 15%;
+  height: 15%;
+  cursor: pointer;
+}
+
+.buttonCreateCategories {
+  background: #F5403D;
+  color: white;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  margin-bottom: 15px;
+  border: 2px solid rgb(223, 221, 221);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.buttonCreateCategories:hover {
+  background-color: #380191;
+}
+
+.overLayCategories {
+  background-color: rgba(0, 0, 0, .3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.overLayCategories.active {
+  visibility: visible;
+}
+
+.popupCategories {
+  background: #f8f8f8;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  width: 500px;
+  max-height: 700px;
+  display: block;
+
+  transition: .3s ease all;
+  transform: scale(0.7);
+  opacity: 0;
+  overflow: auto;
+}
+
+.popupCategories .btn-close-popup-categories {
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+  text-align: right;
+  transition: .3s ease all;
+}
+
+.iconCloseCategories {
+  width: 5%;
+  height: 5%; 
+}
+
+.contentTitleUpdateCategories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 30px 0;
+  opacity: 0;
+}
+
+.titleUpdateCategories {
+  color: #380191;
+  font-size: 30px;
+}
+
+.formGroupUpdateCategories {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.formInputUpdateCategories {
+  outline: none;
+  padding: 5px;
+  border: solid 1px #b1b3b5;
+  border-radius: 5px;
+  width: 95%;
+  height: 17px;
+}
+
+.buttonUpdateCategories {
+  background: #F5403D;
+  color: white;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  height: 40px;
+  border: 2px solid rgb(223, 221, 221);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.buttonUpdateCategories:hover {
+  background-color: #380191;
+}
+
+
+/*animaciones*/
+.popupCategories.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.popupCategories.active .contentTitleUpdateCategories {
+  animation: entradaTitulo .8s ease .5s forwards;
+}
+
+@keyframes entradaTitulo {
+  from {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

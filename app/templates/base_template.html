@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+
+    <!-- Fontawesome -->
+    <link type="text/css" href="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Pixel CSS -->
+    <!--link type="text/css" href="../static/css/style.css" rel="stylesheet"!-->
+    <link type="text/css" href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <header class="header-global bg-danger">
+        <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark">
+            <div class="container position-relative">
+                <a class="navbar-brand me-lg-5" style="width: 100px; height: 100px;" href="/home">
+                    <img class="navbar-brand-dark" src="{{ url_for('static', filename='/img/logo.svg') }}"
+                        alt="Logo light" style="width: 100%; height: 100%;">
+                </a>
+                <div class="navbar-collapse collapse me-auto" id="navbar_global">
+                    <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                        <li class="nav-item dropdown">
+                            <a href="#" class="drop-titulo nav-link dropdown-toggle" id="frontPagesDropdown" aria-expanded="false" data-bs-toggle="dropdown">
+                                Maestros
+                            </a>
+                            <div class="dropdown-menu dropdown-megamenu px-0 py-2 p-lg-4" aria-labelledby="frontPagesDropdown">
+                                <div class="row">
+                                    <div class="personas col-6 col-lg-4">
+                                        <h6 class="d-block mb-3 text-primary">Personas</h6>
+                                        <ul class="list-style-none mb-4">
+                                            <li class="mb-2 megamenu-item">
+                                                <a class="megamenu-link" href="/alumno">Alumno</a>
+                                            </li>
+                                            <li class="mb-2 megamenu-item">
+                                                <a class="megamenu-link" href="/acudiente">Acudiente</a>
+                                            </li>
+                                            <li class="mb-2 megamenu-item">
+                                                <a class="megamenu-link" href="/empleado">Empleado</a>
+                                            </li>
+                                            <li class="mb-2 megamenu-item">
+                                                <a class="megamenu-link" href="/categoria">Categorías</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="instalaciones col-6 col-lg-4">
+                                        <h6 class="d-block mb-3 text-primary">Instalaciones</h6>
+                                        <ul class="list-style-none mb-4">
+                                            <li class="mb-2 megamenu-item">
+                                                <a class="megamenu-link" href="/Registrar_Canchas">Canchas</a>
+                                            </li>
+                                            <li class="mb-2 megamenu-item">
+                                                <a class="megamenu-link" href="/sede">Sedes</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a href="#" class="drop-titulo nav-link dropdown-toggle" id="componentsDropdown" aria-expanded="false" data-bs-toggle="dropdown">
+                                Consultas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="componentsDropdown">
+                                <div class="row">
+                                    <div class="consultas col">
+                                        <ul class="list-style-none">
+                                            <li><a class="dropdown-item" href="/Consultar_Alumnos">Alumnos</a></li>
+                                            <li><a class="dropdown-item" href="/Consultar_Acudientes">Acudientes</a></li>
+                                            <li><a class="dropdown-item" href="/Consultar_Empleados">Empleados</a></li>
+                                            <li><a class="dropdown-item" href="/Consultar_Usuarios">Usuarios</a></li>
+                                            <li><a class="dropdown-item" href="/Consultar_Categorias">Categorías</a></li>
+                                            <li><a class="dropdown-item" href="/Consultar_Canchas">Canchas</a></li>
+                                            <li><a class="dropdown-item" href="/Consultar_Sedes">Sedes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="btn-logout-home btn btn-primary" id="btn-logout-home" type="button">
+                        <div class="content-icon-button-home">
+                            <i class="icon-button bi bi-arrow-right-circle-fill"></i>
+                        </div>
+                        Cerrar sesión
+                    </button>
+                    <!-- <a href=""
+                       class="btn-logout-home btn btn-outline-gray-100 d-none d-lg-inline me-md-3" id="btn-logout-home">
+                       <span class="fas fa-sign-out-alt me-2"></span> Cerrar sesión
+                    </a> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-home">
+        <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-12 bg-light text-black">
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
+        </section>
+
+        <div class="overlay" id="overlay">
+            <div class="pop-up" id="pop-up">
+                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup">
+                    <i class="fas fa-times bi bi-x-circle-fill"></i>
+                </a>
+                <h3>¿Confirmas cerrar sesión?</h3>
+                <div class="contenedor-buttons">
+                    <a href="/login"
+                       class="btn-logout-confirm btn-si btn btn-outline-gray-100 d-none d-lg-inline me-md-3">
+                        Si
+                    </a>
+                    <a href="#"
+                       class="btn-logout-confirm btn-no btn btn-outline-gray-100 d-none d-lg-inline me-md-3" id="btn-no">
+                        No
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-home d-flex flex-wrap align-items-center justify-content-center">
+        <img class="footer-logo" src="../../static/img/Mi proyecto.png" alt="Logo sociedad">
+        <p class="footer-texto text-center">El éxito no es un accidente. Es trabajo duro, perseverancia, aprendizaje, estudio, sacrificio y, sobre todo, amor por lo que estás haciendo o aprendiendo a hacer. Pelé</p>
+        <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+            <a href="mailto:sociedad@sociedadfc.com" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-envelope-check-fill"></i>
+            </a>
+            <a href="https://www.facebook.com/escuela.sociedadfc/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/sociedad_fc1/?hl=de" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+        </div>
+    </footer>
+
+    
+<!-- Core -->
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/headroom.js/dist/headroom.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/onscreen/dist/on-screen.umd.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/vivus/dist/vivus.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Pixel JS -->
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/js/pixel.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+<!-- JavaScript -->
+<script src="../static/js/popup.js"></script>
+
+</body>
+</html>

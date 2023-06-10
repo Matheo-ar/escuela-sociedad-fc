@@ -1,0 +1,81 @@
+{% extends "base_template.html" %}
+
+{% block title %}Listado de Sedes{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
+
+{% block content %}
+<div class="list-employees container pt-4">
+  {% with messages=get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <row>
+    <h3 class='titular'>Sedes <a href="{{url_for('sede.createCampus')}}"><button class="btn btn-sm btn-primary"
+      type="button">Nuevo</button></a></h3> 
+  </row>
+  <table class="table table-striped" id="data">
+    <thead>
+      <tr>
+        <th>Id Sede</th>
+        <th>Nombre Sede</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Director</th>
+        <th>Activo</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in Datostabla %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+        <td>{{ row[6] }}</td>
+        <td>{{ row[7] }}</td>
+        <td>
+          <a href="{{url_for('sede.editcampus',codigo=row[0])}}"><button class="btn btn-sm btn-primary"
+              type="button">Editar</button></a>
+          <a href="{{url_for('sede.deletecampus',codigo=row[0])}}"><button class="btn btn-sm btn-primary"
+              type="button"
+              onclick="return confirm('Estás seguro que deseas eliminar el registro?');">Eliminar</button></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</div>
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8"
+  src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#data').DataTable({
+      columns: [
+        { orderable: true, searchable: false },
+        { orderable: true, searchable: true },
+        { orderable: true, searchable: true },
+        { orderable: true, searchable: true },
+        { orderable: true, searchable: true },
+        { orderable: true, searchable: true },
+        { orderable: true, searchable: true },
+        { orderable: false, searchable: false }
+      ],
+    });
+  });
+</script>
+{% endblock %}

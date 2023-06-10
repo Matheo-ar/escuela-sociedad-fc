@@ -1,0 +1,84 @@
+{% extends "base_template.html" %}
+
+{% block title %}Registrar Sede{% endblock %}
+
+{% block content %}
+<div class="container pt-4">
+  {% with messages=get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <form class="text-left" action="" method="post">
+    {{ form.hidden_tag() }}
+    <h3 class="text-center pt-4">CREAR SEDE</h3>
+    <div class="row mb-4 mb-lg-5">
+      <!-- Form -->
+      <div class="col-lg-4 col-sm-6">
+        <div class="mb-4">
+          <label>IdSede</label>
+          <input type="text" class="form-control" id="IdSede" name="IdSede" readonly>
+          
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="mb-4">
+          {{ form.NombreSede.label }}
+          <input type="text" class="form-control" id="NombreSede" name="NombreSede">
+          {% for error in form.NombreSede.errors %}
+          <span style="color: red;">{{ error }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="mb-4">
+          {{ form.Direccion.label }}
+          <input type="text" class="form-control" id="Direccion" name="Direccion">
+          {% for error in form.Direccion.errors %}
+          <span style="color: red;">{{ error }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4 mb-lg-5 pt-1">
+      <div class="col-lg-4 col-sm-6">
+        <div class="mb-4">
+          {{ form.Telefono.label }}
+          <input type="text" class="form-control" id="Telefono" name="Telefono">
+          {% for error in form.Telefono.errors %}
+          <span style="color: red;">{{ error }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="mb-4">
+          {{ form.Director.label }}
+          <input type="text" class="form-control" id="Director" name="Director">
+          {% for error in form.Director.errors %}
+          <span style="color: red;">{{ error }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="mb-3">
+          {{ form.ActiveCampus.label }}
+          <select class="form-select" id="ActiveCampus" name="ActiveCampus" aria-label="Default select example">
+            <option selected>Seleccione el estado</option>
+            <option value="Si">Activo</option>
+            <option value="No">Inactivo</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+      <button class="btn btn-lg btn-primary" type="submit">Crear</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,211 @@
+{% extends "base_template.html" %}
+
+{% block title %}Ver Alumno{% endblock %}
+
+
+{% block content %}
+<div class="container pt-4">
+  {% with messages=get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <form class="text-left" action="" method="post">
+    <fieldset disabled>
+      {{ form.hidden_tag() }}
+      <h3 class="text-center pt-4">CONSULTAR ALUMNO</h3>
+      <div class="row mb-4 mb-lg-5">
+        <!-- Form -->
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-3">
+            {{ form.Tipodoc.label }}
+            <select class="form-select" id="Tipodoc" name="Tipodoc" aria-label="Default select example">
+              <option value="{{Datoregistro[0]}}">{{ Datoregistro[1] }}</option>
+              <option value="RC">Registro civil</option>
+              <option value="TI">Targeta de identidad</option>
+              <option value="CC">Cédula de ciudadanía</option>
+              <option value="CE">Cédula de extrangería</option>
+            </select>
+            {% for error in form.Tipodoc.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-4">
+            {{ form.Documento.label }}
+            <input type="text" class="form-control" id="Documento" name="Documento" value="{{Datoregistro[2]}}">
+            {% for error in form.Documento.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-4">
+            {{ form.Nombres.label }}
+            <input type="text" class="form-control" id="Nombres" name="Nombres" value="{{Datoregistro[3]}}">
+            {% for error in form.Nombres.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4 mb-lg-5">
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-4">
+            {{ form.Apellidos.label }}
+            <input type="text" class="form-control" id="Apellidos" name="Apellidos" value="{{Datoregistro[4]}}">
+            {% for error in form.Apellidos.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-3">
+            {{ form.Genero.label }}
+            <select class="form-select" id="Genero" name="Genero" aria-label="Default select example">
+              <option value="{{Datoregistro[5]}}">{{ Datoregistro[6] }}</option>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <!-- Form -->
+          <div class="mb-4">
+            {{ form.Nacimiento.label }}
+            <input type="date" class="form-control" id="Nacimiento" name="Nacimiento" value="{{Datoregistro[7]}}">
+            {% for error in form.Nacimiento.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4 mb-lg-5 pt-1">
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-4">
+            {{ form.Email.label }}
+            <input type="text" class="form-control" id="Email" name="Email" value="{{Datoregistro[8]}}">
+            {% for error in form.Email.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-4">
+            {{ form.Telefono.label }}
+            <input type="text" class="form-control" id="Telefono" name="Telefono" value="{{Datoregistro[9]}}">
+            {% for error in form.Telefono.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-4">
+            {{ form.Direccion.label }}
+            <input type="text" class="form-control" id="Direccion" name="Direccion" value="{{Datoregistro[10]}}">
+            {% for error in form.Direccion.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4 mb-lg-5 pt-1">
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-4">
+            {{ form.Contrasena.label }}
+            <input type="password" class="form-control" id="Contrasena" name="Contrasena" value="********">
+            {% for error in form.Contrasena.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- Datos alumno -->
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-3">
+            {{ form.CategorieStudent.label }}
+            <select class="form-select" id="CategorieStudent" name="CategorieStudent"
+              aria-label="Default select example">
+              <option value="{{Datoregistro[11]}}">{{ Datoregistro[12] }}</option>
+              {% for row in categorias %}
+              <option value="{{row[0]}}">{{row[1]}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-3">
+            {{ form.FieldStudent.label }}
+            <select class="form-select" id="FieldStudent" name="FieldStudent" aria-label="Default select example">
+              <option value="{{Datoregistro[13]}}">{{ Datoregistro[14] }}</option>
+              {% for row in sedes %}
+              <option value="{{row[0]}}">{{row[1]}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4 mb-lg-5 pt-1">
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-3">
+            {{ form.AttendantStudent.label }}
+            <select class="form-select" id="AttendantStudent" name="AttendantStudent"
+              aria-label="Default select example">
+              <option value="{{Datoregistro[15]}}">{{ Datoregistro[16] }}</option>
+              {% for row in Listas %}
+              <option value="{{row[0]}}">{{row[1]}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-4">
+            {{ form.DateRegistration.label }}
+            <input type="date" class="form-control" id="DateRegistration" name="DateRegistration" value="{{Datoregistro[17]}}">
+            {% for error in form.DateRegistration.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-4">
+            {{ form.LastPayment.label }}
+            <input type="text" class="form-control" id="LastPayment" name="LastPayment" value="{{Datoregistro[18]}}">
+            {% for error in form.LastPayment.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4 mb-lg-5 pt-1">
+        <div class="col-lg-4 col-sm-6">
+          <div class="mb-3">
+            {{ form.ActiveStudent.label }}
+            <select class="form-select" id="ActiveStudent" name="ActiveStudent" aria-label="Default select example">
+              <option value="{{Datoregistro[19]}}">{{ Datoregistro[20] }}</option>
+              <option value="Si">Activo</option>
+              <option value="No">Inactivo</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+      </div>
+      <div class="col-lg-4 col-sm-6">
+    </fieldset>
+  </form>
+</div>
+<script>
+  AttendantStudent_select = document.getElementById('DataAcudiente');
+</script>
+{% endblock %}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <!-- Primary Meta Tags -->
+  <title>
+      Sociedad Fútbol Club  - Login
+  </title>
+
+  <!-- Fontawesome -->
+  <link type="text/css" href="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Pixel CSS -->
+  <link type="text/css" href="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/css/pixel.css" rel="stylesheet">
+  <!-- Specific Page JS goes HERE  -->  
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../static/css/style.css">
+
+</head>
+<body>
+   <main class="main-login">       
+      <!-- Section -->
+      <section class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark ">
+          <div class="container-login container"> 
+            {% with messages=get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages%}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{message}}
+                </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}     
+              <div class="row d-flex justify-content-center">
+                  <div class="col-12 d-flex align-items-center justify-content-center">
+                      <div class="signin-inner bg-white shadow-soft border rounded border-gray-300 p-4 p-lg-5 w-100 fmxw-500">
+                        <div class="text-center text-md-center">
+                              <h1 class="titulo-login mb-0 h3">
+                                  <a href="" target="_blank">SFC</a> - Iniciar sesión
+                              </h1>
+                              <br />
+                            </div>
+                          <div class="contenido-escudo d-flex justify-content-center">
+                            <img class="logo-sfc" src="../../static/img/Mi proyecto.png" alt="Escudo Sociedad">
+                          </div>
+                          <form method="post" action="" class="formulario-login mt-4">
+                            {{ form.hidden_tag() }}
+                              <!-- Form -->
+                              <div class="form-group mb-4">
+                                {{ form.Documento.label }}
+                                  <div class="input-group">
+                                      <span class="input-group-text" id="basic-addon1"><span class="fas fa-user"></span></span>
+                                      <input class="form-control" id="Documento" name="Documento" required="" type="text" value="">
+                                  </div> 
+                                  {% for error in form.Documento.errors %}
+                                    <span style="color: red;">{{ error }}</span>
+                                  {% endfor %} 
+                              </div>
+                              <!-- End of Form -->
+                              <div class="form-group">
+                                  <!-- Form -->
+                                  <div class="form-group mb-4">
+                                    {{ form.Contrasena.label }}
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2"><span class="fas fa-unlock-alt"></span></span>
+                                        <input class="form-control" id="Contrasena" name="Contrasena" required="" type="password" value="">
+                                    </div>
+                                    {% for error in form.Contrasena.errors %}
+                                      <span style="color: red;">{{ error }}</span>
+                                    {% endfor %}   
+                                  </div>
+                                  <!-- End of Form -->
+                              </div>
+                              <div class="d-grid">
+                                  <button type="submit" name="login" class="boton-login btn btn-primary">Iniciar sesión</button>
+                              </div>
+                          </form>
+
+                          <br />
+                  </div>
+              </div>
+          </div>
+      </section>
+    </main>
+
+
+
+    
+<!-- Core -->
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/headroom.js/dist/headroom.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/onscreen/dist/on-screen.umd.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/vivus/dist/vivus.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Pixel JS -->
+<script src="https://appsrv1-147a1.kxcdn.com/pixel-lite-v400/js/pixel.js"></script>
+
+    <!-- Specific Page JS goes HERE  -->
+    
+
+</body>
+</html>
